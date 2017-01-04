@@ -1,0 +1,3 @@
+[submodule "RFStamp-BitCloud"]
+	path = RFStamp-BitCloud
+	url = https://github.com/raitraak-rrk/RFStamp-BitCloud.git
