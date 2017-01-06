@@ -34,7 +34,7 @@
 #include <commandManager.h>
 #include <otauService.h>
 
-#include <lightBindings.h>
+#include <appBindings.h>
 #include <N_DeviceInfo_bindings.h>
 #include <N_Connection.h>
 #include <N_LinkTarget.h>

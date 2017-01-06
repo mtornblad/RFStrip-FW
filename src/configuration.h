@@ -64,9 +64,9 @@
 #define APP_DEVICE_TYPE_BRIDGE 2
 
 // Select ZLL device type: either Color Scene Remote or Light
-#define APP_ZLL_DEVICE_TYPE APP_DEVICE_TYPE_COLOR_SCENE_REMOTE
+//#define APP_ZLL_DEVICE_TYPE APP_DEVICE_TYPE_COLOR_SCENE_REMOTE
 //#define APP_ZLL_DEVICE_TYPE APP_DEVICE_TYPE_TEMPERATURE_COLOR_LIGHT
-//#define APP_ZLL_DEVICE_TYPE APP_DEVICE_TYPE_EXTENDED_COLOR_LIGHT
+#define APP_ZLL_DEVICE_TYPE APP_DEVICE_TYPE_EXTENDED_COLOR_LIGHT
 //#define APP_ZLL_DEVICE_TYPE APP_DEVICE_TYPE_DIMMABLE_LIGHT
 //#define APP_ZLL_DEVICE_TYPE APP_DEVICE_TYPE_ON_OFF_LIGHT
 //#define APP_ZLL_DEVICE_TYPE APP_DEVICE_TYPE_BRIDGE
@@ -209,7 +209,7 @@
 // available on all platforms. If the latter case then UID value must be provided
 // by user via this parameter. This parameter must be unique for each device in a
 // network. This should not be 0 for Coordinator.
-#define CS_UID 0x0LL
+#define CS_UID 0x1LL
 
 // If the parameter being switched between 0xff and 0x00, determines whether the
 // device accepts or not a child joining the network via MAC association, that is,

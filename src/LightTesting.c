@@ -19,7 +19,7 @@
 /******************************************************************************
                     Includes section
 ******************************************************************************/
-#include <colorSceneRemoteTesting.h>
+#include <lightTesting.h>
 #include <uartManager.h>
 
 #include <N_InterPan_Bindings.h>

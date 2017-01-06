@@ -58,7 +58,7 @@
 #include <lightCommissioningCluster.h>
 #include <console.h>
 
-#include <lightBindings.h>
+#include <appBindings.h>
 
 #include <N_LinkTarget.h>
 #include <N_LinkTarget_Init.h>
