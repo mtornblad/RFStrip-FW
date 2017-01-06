@@ -1,0 +1,3224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>7.0</ProjectVersion>
+    <ToolchainName>com.Atmel.ARMGCC.C</ToolchainName>
+    <ProjectGuid>dce6c7e3-ee26-4d79-826b-08594b9ad897</ProjectGuid>
+    <avrdevice>ATSAMR21G18A</avrdevice>
+    <avrdeviceseries>none</avrdeviceseries>
+    <OutputType>Executable</OutputType>
+    <Language>C</Language>
+    <OutputFileName>$(MSBuildProjectName)</OutputFileName>
+    <OutputFileExtension>.elf</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <AssemblyName>RFStrip-FW</AssemblyName>
+    <Name>RFStrip-FW</Name>
+    <RootNamespace>RFStrip-FW</RootNamespace>
+    <ToolchainFlavour>Native</ToolchainFlavour>
+    <KeepTimersRunning>true</KeepTimersRunning>
+    <OverrideVtor>false</OverrideVtor>
+    <CacheFlash>true</CacheFlash>
+    <ProgFlashFromRam>true</ProgFlashFromRam>
+    <RamSnippetAddress />
+    <UncachedRange />
+    <preserveEEPROM>true</preserveEEPROM>
+    <OverrideVtorValue />
+    <BootSegment>2</BootSegment>
+    <eraseonlaunchrule>0</eraseonlaunchrule>
+    <AsfFrameworkConfig>
+      <framework-data xmlns="">
+        <options />
+        <configurations />
+        <files />
+        <documentation help="" />
+        <offline-documentation help="" />
+        <dependencies>
+          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.31.0" />
+        </dependencies>
+      </framework-data>
+    </AsfFrameworkConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ToolchainSettings>
+      <ArmGcc>
+        <armgcc.common.outputfiles.hex>True</armgcc.common.outputfiles.hex>
+        <armgcc.common.outputfiles.lss>True</armgcc.common.outputfiles.lss>
+        <armgcc.common.outputfiles.eep>True</armgcc.common.outputfiles.eep>
+        <armgcc.common.outputfiles.bin>True</armgcc.common.outputfiles.bin>
+        <armgcc.common.outputfiles.srec>True</armgcc.common.outputfiles.srec>
+        <armgcc.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>NDEBUG</Value>
+          </ListValues>
+        </armgcc.compiler.symbols.DefSymbols>
+        <armgcc.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\atmel\SAMR21_DFP\1.0.34\include</Value>
+            <Value>%24(PackRepoDir)\arm\cmsis\4.2.0\CMSIS\Include\</Value>
+          </ListValues>
+        </armgcc.compiler.directories.IncludePaths>
+        <armgcc.compiler.optimization.level>Optimize for size (-Os)</armgcc.compiler.optimization.level>
+        <armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>True</armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>
+        <armgcc.compiler.warnings.AllWarnings>True</armgcc.compiler.warnings.AllWarnings>
+        <armgcc.linker.libraries.Libraries>
+          <ListValues>
+            <Value>libm</Value>
+          </ListValues>
+        </armgcc.linker.libraries.Libraries>
+        <armgcc.linker.libraries.LibrarySearchPaths>
+          <ListValues>
+            <Value>%24(ProjectDir)\Device_Startup</Value>
+          </ListValues>
+        </armgcc.linker.libraries.LibrarySearchPaths>
+        <armgcc.linker.optimization.GarbageCollectUnusedSections>True</armgcc.linker.optimization.GarbageCollectUnusedSections>
+        <armgcc.linker.miscellaneous.LinkerFlags>-Tsamr21g18a_flash.ld</armgcc.linker.miscellaneous.LinkerFlags>
+        <armgcc.assembler.general.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\atmel\SAMR21_DFP\1.0.34\include</Value>
+            <Value>%24(PackRepoDir)\arm\cmsis\4.2.0\CMSIS\Include\</Value>
+          </ListValues>
+        </armgcc.assembler.general.IncludePaths>
+        <armgcc.preprocessingassembler.general.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\atmel\SAMR21_DFP\1.0.34\include</Value>
+            <Value>%24(PackRepoDir)\arm\cmsis\4.2.0\CMSIS\Include\</Value>
+          </ListValues>
+        </armgcc.preprocessingassembler.general.IncludePaths>
+      </ArmGcc>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ToolchainSettings>
+      <ArmGcc>
+        <armgcc.common.outputfiles.hex>True</armgcc.common.outputfiles.hex>
+        <armgcc.common.outputfiles.lss>True</armgcc.common.outputfiles.lss>
+        <armgcc.common.outputfiles.eep>True</armgcc.common.outputfiles.eep>
+        <armgcc.common.outputfiles.bin>True</armgcc.common.outputfiles.bin>
+        <armgcc.common.outputfiles.srec>True</armgcc.common.outputfiles.srec>
+        <armgcc.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>DEBUG</Value>
+          </ListValues>
+        </armgcc.compiler.symbols.DefSymbols>
+        <armgcc.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\atmel\SAMR21_DFP\1.0.34\include</Value>
+            <Value>%24(PackRepoDir)\arm\cmsis\4.2.0\CMSIS\Include\</Value>
+          </ListValues>
+        </armgcc.compiler.directories.IncludePaths>
+        <armgcc.compiler.optimization.level>Optimize (-O1)</armgcc.compiler.optimization.level>
+        <armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>True</armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>
+        <armgcc.compiler.optimization.DebugLevel>Maximum (-g3)</armgcc.compiler.optimization.DebugLevel>
+        <armgcc.compiler.warnings.AllWarnings>True</armgcc.compiler.warnings.AllWarnings>
+        <armgcc.linker.libraries.Libraries>
+          <ListValues>
+            <Value>libm</Value>
+          </ListValues>
+        </armgcc.linker.libraries.Libraries>
+        <armgcc.linker.libraries.LibrarySearchPaths>
+          <ListValues>
+            <Value>%24(ProjectDir)\Device_Startup</Value>
+          </ListValues>
+        </armgcc.linker.libraries.LibrarySearchPaths>
+        <armgcc.linker.optimization.GarbageCollectUnusedSections>True</armgcc.linker.optimization.GarbageCollectUnusedSections>
+        <armgcc.linker.miscellaneous.LinkerFlags>-Tsamr21g18a_flash.ld</armgcc.linker.miscellaneous.LinkerFlags>
+        <armgcc.assembler.general.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\atmel\SAMR21_DFP\1.0.34\include</Value>
+            <Value>%24(PackRepoDir)\arm\cmsis\4.2.0\CMSIS\Include\</Value>
+          </ListValues>
+        </armgcc.assembler.general.IncludePaths>
+        <armgcc.assembler.debugging.DebugLevel>Default (-g)</armgcc.assembler.debugging.DebugLevel>
+        <armgcc.preprocessingassembler.general.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\atmel\SAMR21_DFP\1.0.34\include</Value>
+            <Value>%24(PackRepoDir)\arm\cmsis\4.2.0\CMSIS\Include\</Value>
+          </ListValues>
+        </armgcc.preprocessingassembler.general.IncludePaths>
+        <armgcc.preprocessingassembler.debugging.DebugLevel>Default (-Wa,-g)</armgcc.preprocessingassembler.debugging.DebugLevel>
+      </ArmGcc>
+    </ToolchainSettings>
+    <UsesExternalMakeFile>True</UsesExternalMakeFile>
+    <OutputDirectory>C:\Work\RFLighting\Software\RFStrip-FW</OutputDirectory>
+    <BuildTarget>
+    </BuildTarget>
+    <CleanTarget>
+    </CleanTarget>
+    <ExternalMakeFilePath>C:\Work\RFLighting\Software\RFStrip-FW\Makefile</ExternalMakeFilePath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="RFStamp-BitCloud\" />
+    <Folder Include="RFStamp-BitCloud\Applications\" />
+    <Folder Include="RFStamp-BitCloud\Applications\ZLLDemo\" />
+    <Folder Include="RFStamp-BitCloud\Applications\ZLLDemo\common\" />
+    <Folder Include="RFStamp-BitCloud\Applications\ZLLDemo\common\include\" />
+    <Folder Include="RFStamp-BitCloud\Applications\ZLLDemo\common\src\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\APS\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\APS\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\APS\include\private\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\BSP\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\BSP\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\BSP\SAMR21\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\BSP\SAMR21\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\BSP\SAMR21\src\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ConfigServer\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ConfigServer\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ConfigServer\include\private\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ConfigServer\src\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\HAL\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\src\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\common\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\common\src\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\DPWM\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\DPWM\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\DPWM\src\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\ISD\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\ISD\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\ISD\src\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\OFD\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\OFD\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\OFD\src\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBClasses\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBClasses\cdc\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBClasses\cdc\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBClasses\cdc\src\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBClasses\common\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBClasses\common\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBClasses\common\src\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBClasses\DFU\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBClasses\DFU\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBClasses\DFU\src\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBClasses\MSD\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBClasses\MSD\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBClasses\MSD\src\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBClasses\VCP\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBClasses\VCP\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBClasses\VCP\src\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBFIFO\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBFIFO\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBFIFO\src\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\HAL\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_ENV\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_ENV\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\RF231_RF212\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\RF231_RF212\MAC_HWD\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\RF231_RF212\MAC_HWD\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\RF231_RF212\PHY\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\RF231_RF212\PHY\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWI\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWI\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\NWK\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\PersistDataServer\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\PersistDataServer\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\PersistDataServer\src\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\PersistDataServer\std\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\PersistDataServer\std\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\PersistDataServer\std\src\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\PersistDataServer\wl\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\PersistDataServer\wl\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\PersistDataServer\wl\src\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\Security\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\Security\ServiceProvider\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\Security\ServiceProvider\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\Security\ServiceProvider\include\private\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\Security\SoftAes\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\Security\TrustCentre\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\Security\TrustCentre\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\Security\TrustCentre\include\private\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\SystemEnvironment\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\SystemEnvironment\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\SystemEnvironment\src\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\src\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZCL\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\private\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZCL\src\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZDO\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZDO\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZDO\include\private\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Address\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Address\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Address\src\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Beacon\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Beacon\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_ErrH\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_ErrH\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_ErrH\src\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Fsm\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Fsm\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Fsm\src\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Init\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Init\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Init\src\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Log\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Log\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Log\src\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Memory\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Memory\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Memory\src\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Task\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Task\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Task\src\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Timer\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Timer\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Timer\src\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Types\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Types\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Util\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Util\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Util\src\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\D_Nv\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\D_Nv\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\D_Nv\src\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\D_XNv\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\D_XNv\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\D_XNv\src\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_AddressManager\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_AddressManager\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_AddressManager\src\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_AddressMap\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_AddressMap\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_AddressMap\src\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_BcConfig\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_BcConfig\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Beacon\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Beacon\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Binding\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Binding\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Binding\src\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Cmi\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Cmi\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Cmi\src\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Connection\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Connection\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Connection\src\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_DeviceInfo\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_DeviceInfo\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_DeviceInfo\src\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_EndDeviceRobustness\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_EndDeviceRobustness\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_EndDeviceRobustness\src\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Groups\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Groups\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Groups\src\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_InterPan\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_InterPan\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_InterPan\src\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_LinkInitiator\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_LinkInitiator\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_LinkInitiator\src\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_LinkTarget\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_LinkTarget\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_LinkTarget\src\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_LowPower\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_LowPower\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_LowPower\src\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_PacketDistributor\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_PacketDistributor\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_PacketDistributor\src\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Radio\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Radio\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Radio\src\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_ReconnectHandler\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_ReconnectHandler\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_ReconnectHandler\src\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Security\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Security\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Security\src\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_SourceRouting\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_SourceRouting\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_SourceRouting\src\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Watchdog\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Watchdog\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Watchdog\src\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Zcl_Framework\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Zcl_Framework\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Zcl_Framework\src\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Zdp\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Zdp\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Zdp\src\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\S_Nv\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\S_Nv\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\S_Nv\src\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\S_XNv\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\S_XNv\include\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\S_XNv\src\" />
+    <Folder Include="RFStamp-BitCloud\BitCloud\lib\" />
+    <Folder Include="src\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="RFStamp-BitCloud\Applications\ZLLDemo\common\include\commandManager.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\Applications\ZLLDemo\common\include\console.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\Applications\ZLLDemo\common\include\debug.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\Applications\ZLLDemo\common\include\errH.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\Applications\ZLLDemo\common\include\networkJoining.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\Applications\ZLLDemo\common\include\N_PacketDistributor.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\Applications\ZLLDemo\common\include\N_ZllEndpoint.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\Applications\ZLLDemo\common\include\otauService.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\Applications\ZLLDemo\common\include\S_SerialComm.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\Applications\ZLLDemo\common\include\uartManager.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\Applications\ZLLDemo\common\include\zllDemo.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\Applications\ZLLDemo\common\src\commandManager.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\Applications\ZLLDemo\common\src\console.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\Applications\ZLLDemo\common\src\debug.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\Applications\ZLLDemo\common\src\errH.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\Applications\ZLLDemo\common\src\networkJoining.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\Applications\ZLLDemo\common\src\N_PacketDistributor.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\Applications\ZLLDemo\common\src\uartManager.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\APS\include\aps.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\APS\include\apsAIB.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\APS\include\apsCommandReq.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\APS\include\apsCommon.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\APS\include\apsConfigServer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\APS\include\apsCryptoKeys.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\APS\include\apsdeData.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\APS\include\apsdeEndpoint.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\APS\include\apsmeAuthenticate.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\APS\include\apsmeBind.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\APS\include\apsmeEstablishKey.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\APS\include\apsmeGroup.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\APS\include\apsmeRemoveDevice.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\APS\include\apsmeRequestKey.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\APS\include\apsmeSwitchKey.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\APS\include\apsmeTransportKey.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\APS\include\apsmeUpdateDevice.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\APS\include\intrpData.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\APS\include\private\apsAuthenticate.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\APS\include\private\apsBinding.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\APS\include\private\apsCommand.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\APS\include\private\apsConfig.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\APS\include\private\apsDataManager.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\APS\include\private\apsDbg.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\APS\include\private\apsEndpoint.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\APS\include\private\apsFrames.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\APS\include\private\apsGroup.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\APS\include\private\apsKeyPairSet.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\APS\include\private\apsMemoryManager.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\APS\include\private\apsRejectDuplicate.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\APS\include\private\apsRemoveDevice.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\APS\include\private\apsRequestKey.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\APS\include\private\apsSkke.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\APS\include\private\apsSkkeInitiator.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\APS\include\private\apsSkkeResponder.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\APS\include\private\apsSmSsp.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\APS\include\private\apsState.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\APS\include\private\apsSwitchKey.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\APS\include\private\apsTaskManager.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\APS\include\private\apsTransportAppKey.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\APS\include\private\apsTransportKey.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\APS\include\private\apsTransportNwkKey.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\APS\include\private\apsTransportTrustKey.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\APS\include\private\apsUpdateDevice.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\BSP\BoardConfig.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\BSP\include\bspUid.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\BSP\include\buttons.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\BSP\include\hexSwitch.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\BSP\include\joystick.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\BSP\include\lcd.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\BSP\include\leds.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\BSP\include\rs232Controller.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\BSP\include\rs485Controller.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\BSP\include\sensors.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\BSP\include\sliders.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\BSP\include\usbController.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\BSP\SAMR21\include\bspDbg.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\BSP\SAMR21\include\bspI2c.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\BSP\SAMR21\include\bspLeds.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\BSP\SAMR21\include\bspTaskManager.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\BSP\SAMR21\include\bspTempSensor.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\BSP\SAMR21\include\bspVoltageSensor.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\BSP\SAMR21\include\hs2xy.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\BSP\SAMR21\include\lcdExt.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\BSP\SAMR21\include\ledsExt.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\BSP\SAMR21\include\maxL.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\BSP\SAMR21\include\qTouch.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\BSP\SAMR21\include\touch.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\BSP\SAMR21\include\touch_api_SAMR21.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\BSP\SAMR21\include\xyl2rgb.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\BSP\SAMR21\src\bspAntDiversity.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\BSP\SAMR21\src\bspI2c.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\BSP\SAMR21\src\bspSpi.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\BSP\SAMR21\src\bspTaskManager.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\BSP\SAMR21\src\bspTempSensor.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\BSP\SAMR21\src\bspUid.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\BSP\SAMR21\src\bspUsart.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\BSP\SAMR21\src\bspUsbVbus.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\BSP\SAMR21\src\bspVoltageSensor.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\BSP\SAMR21\src\buttons.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\BSP\SAMR21\src\fakeBSP.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\BSP\SAMR21\src\hs2xy.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\BSP\SAMR21\src\joystick.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\BSP\SAMR21\src\lcd.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\BSP\SAMR21\src\leds.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\BSP\SAMR21\src\maxL.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\BSP\SAMR21\src\qTouch.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\BSP\SAMR21\src\touch.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\BSP\SAMR21\src\xyl2rgb.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ConfigServer\include\configServer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ConfigServer\include\csDefaults.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ConfigServer\include\private\csBuffers.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ConfigServer\include\private\csConstTable.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ConfigServer\include\private\csDbg.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ConfigServer\include\private\csMemTable.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ConfigServer\include\private\csSIB.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ConfigServer\include\private\csVarTable.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ConfigServer\include\stackVersion.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ConfigServer\src\configServer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ConfigServer\src\csMem.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ConfigServer\src\csPersistentMem.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\include\atsamr21.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\include\component_adc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\include\component_port.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\include\component_sercom.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\include\component_usb.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\include\core_cm0plus.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\include\core_cmFunc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\include\core_cmInstr.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\include\gpio.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\include\halAdc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\include\halAppClock.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\include\halAssert.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\include\halClkCtrl.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\include\halDbg.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\include\halDiagnostic.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\include\halEeprom.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\include\halFlash.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\include\halInterrupt.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\include\halIrq.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\include\halMacIsr.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\include\halPwm.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\include\halReset.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\include\halRfCtrl.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\include\halRfPio.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\include\halRfSpi.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\include\halSleep.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\include\halSleepTimerClock.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\include\halSpi.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\include\halTempSensor.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\include\halTwi.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\include\halUsart.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\include\halUsb.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\include\halWdt.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\include\instance_usb.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\src\atomic.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\src\halAdc.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\src\halAppClock.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\src\halEeprom.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\src\halFlash.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\src\halInit.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\src\halIrq.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\src\halLowLevelInit.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\src\halMacIsr.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\src\halPwm.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\src\halReset.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\src\halRfCtrl.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\src\halRfSpi.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\src\halSleep.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\src\halSleepTimerClock.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\src\halSpi.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\src\halStartupGcc.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\src\halStartupIar.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\src\halTempSensor.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\src\halTwi.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\src\halUsart.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\src\halUsb.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\src\halVectorTable.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\atsamr21\common\src\halWdt.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\common\src\adc.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\common\src\appTimer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\common\src\eeprom.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\common\src\flash.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\common\src\halTaskManager.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\common\src\i2cPacket.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\common\src\irq.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\common\src\pwm.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\common\src\resetReason.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\common\src\sleep.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\common\src\sleepTimer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\common\src\spi.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\common\src\statStack.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\common\src\tempSensor.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\common\src\timer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\common\src\usart.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\common\src\usb.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\common\src\wdt.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\DPWM\include\dithTimerIsr.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\DPWM\src\dithPwm.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\DPWM\src\dithTimerIsr.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\include\dithPwm.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\include\driversDbg.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\include\isdImageStorage.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\include\massStorageDevice.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\include\ofdExtMemory.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\include\usbFifoUsart.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\include\vcpVirtualUsart.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\ISD\include\isdConsoleTunneling.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\ISD\src\isdConsoleTunneling.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\ISD\src\isdImageStorage.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\OFD\include\ofdMemoryDriver.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\OFD\src\ofdAt25Driver.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\OFD\src\ofdAt45dbDriver.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\OFD\src\ofdCommand.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\OFD\src\ofdCrcService.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\OFD\src\ofdFakeDriver.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\OFD\src\ofdIntFlashRead.s">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\OFD\src\ofdM25Driver.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\OFD\src\ofdMx25l2006eDriver.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\OFD\src\ofdMx25v4006eDriver.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\OFD\src\ofdSpiSerializer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBClasses\cdc\include\conf_usb.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBClasses\cdc\include\udc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBClasses\cdc\include\udc_desc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBClasses\cdc\include\udd.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBClasses\cdc\include\udi.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBClasses\cdc\include\udi_cdc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBClasses\cdc\include\udi_cdc_conf.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBClasses\cdc\include\usb_atmel.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBClasses\cdc\include\usb_protocol.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBClasses\cdc\include\usb_protocol_cdc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBClasses\cdc\src\udc.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBClasses\cdc\src\udi_cdc.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBClasses\cdc\src\udi_cdc_desc.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBClasses\cdc\src\usb_device_udd.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBClasses\common\include\usbDescriptors.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBClasses\common\include\usbEnumeration.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBClasses\common\include\usbSetupProcess.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBClasses\common\src\usbDescriptors.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBClasses\common\src\usbEnumeration.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBClasses\common\src\usbSetupProcess.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBClasses\DFU\include\dfuProtocol.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBClasses\DFU\src\dfuProtocol.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBClasses\MSD\include\abstractMemory.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBClasses\MSD\include\mem.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBClasses\MSD\include\mscProtocol.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBClasses\MSD\include\scsiProtocol.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBClasses\MSD\src\abstractMemory.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBClasses\MSD\src\massStorageDevice.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBClasses\MSD\src\mmc.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBClasses\MSD\src\mscProtocol.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBClasses\MSD\src\scsiProtocol.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBClasses\VCP\include\vcpCdcProtocol.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBClasses\VCP\src\vcpCdcProtocol.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBClasses\VCP\src\vcpVirtualUsart.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBFIFO\include\usbFifoVirtualUsart.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBFIFO\src\usbFifoFT245RL.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBFIFO\src\usbFifoVirtualUsart.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\include\adc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\include\appTimer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\include\atomic.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\include\bcTimer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\include\calibration.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\include\dbgu.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\include\eeprom.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\include\flash.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\include\halInit.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\include\halTaskManager.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\include\hsmci.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\include\i2cPacket.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\include\irq.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\include\pwm.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\include\reducePower.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\include\resetReason.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\include\sleep.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\include\sleepTimer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\include\spi.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\include\statStack.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\include\stdioAdapter.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\include\tempSensor.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\include\uart.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\include\usart.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\include\usb.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\include\w1.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\HAL\include\wdtCtrl.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\include\mac.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\include\macAddr.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\include\macAffix.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\include\macAssociate.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\include\macBanNode.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\include\macBeacon.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\include\macBuffers.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\include\macCommon.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\include\macCommStatus.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\include\macData.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\include\macDbg.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\include\macDisassociate.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\include\macEnvironment.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\include\macFrame.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\include\macMem.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\include\macOrphan.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\include\macphyPib.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\include\macPoll.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\include\macPurge.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\include\macReset.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\include\macRxEnable.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\include\macScan.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\include\macSetGet.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\include\macStart.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\include\macSuperframe.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\include\macSync.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\include\phy.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\include\rfBattery.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\include\rfCalibration.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\include\rfEncrypt.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\include\rfInit.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\include\rfRandom.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\include\rfRegAccess.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_ENV\include\macenvMem.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_ENV\include\macenvPib.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\include\machwd.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\include\machwdBatMon.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\include\machwdCalibration.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\include\machwdData.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\include\machwdEd.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\include\machwdEncrypt.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\include\machwdRegAccess.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\include\machwdReset.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\include\machwdRnd.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\include\machwdService.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\include\machwdSet.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\include\machwdSetTrx.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\RF231_RF212\MAC_HWD\include\machwdBatMonHandler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\RF231_RF212\MAC_HWD\include\machwdCalibHandler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\RF231_RF212\MAC_HWD\include\machwdEdHandler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\RF231_RF212\MAC_HWD\include\machwdEncryptHandler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\RF231_RF212\MAC_HWD\include\machwdFrameRoutine.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\RF231_RF212\MAC_HWD\include\machwdHandlerCtrl.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\RF231_RF212\MAC_HWD\include\machwdManager.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\RF231_RF212\MAC_HWD\include\machwdMem.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\RF231_RF212\MAC_HWD\include\machwdMemAccess.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\RF231_RF212\MAC_HWD\include\machwdRegAccessHandler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\RF231_RF212\MAC_HWD\include\machwdResetHandler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\RF231_RF212\MAC_HWD\include\machwdRndHandler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\RF231_RF212\MAC_HWD\include\machwdRxBuffer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\RF231_RF212\MAC_HWD\include\machwdRxFrameHandler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\RF231_RF212\MAC_HWD\include\machwdSetHandler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\RF231_RF212\MAC_HWD\include\machwdTrxCtrl.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\RF231_RF212\MAC_HWD\include\machwdTrxHandler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\RF231_RF212\MAC_HWD\include\machwdTxFrameHandler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\RF231_RF212\PHY\include\at86rf212.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\RF231_RF212\PHY\include\at86rf231.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\RF231_RF212\PHY\include\at86rf233.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\RF231_RF212\PHY\include\at86rf2xx.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\RF231_RF212\PHY\include\phyAntDiversity.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\RF231_RF212\PHY\include\phyBatMon.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\RF231_RF212\PHY\include\phyCalib.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\RF231_RF212\PHY\include\phyCommon.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\RF231_RF212\PHY\include\phyDataStatus.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\RF231_RF212\PHY\include\phyDeepSleep.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\RF231_RF212\PHY\include\phyEd.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\RF231_RF212\PHY\include\phyEncrypt.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\RF231_RF212\PHY\include\phyInit.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\RF231_RF212\PHY\include\phyMem.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\RF231_RF212\PHY\include\phyMemAccess.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\RF231_RF212\PHY\include\phyRegAccess.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\RF231_RF212\PHY\include\phyReset.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\RF231_RF212\PHY\include\phyRfSpiProto.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\RF231_RF212\PHY\include\phyRnd.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\RF231_RF212\PHY\include\phyRtimerIrqDispatcher.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\RF231_RF212\PHY\include\phyRxFrame.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\RF231_RF212\PHY\include\phyRxTxIndicator.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\RF231_RF212\PHY\include\phySet.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\RF231_RF212\PHY\include\phySetTrxState.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\RF231_RF212\PHY\include\phyStateMachine.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\RF231_RF212\PHY\include\phyTxFrame.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWD_PHY\RF231_RF212\PHY\include\phyTxPowerConverter.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWI\include\machwiAssociateHandler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWI\include\machwiBeaconHandler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWI\include\machwiDataHandler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWI\include\machwiDisassociateHandler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWI\include\machwiHwdReqMemPool.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWI\include\machwiManager.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWI\include\machwiMem.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWI\include\machwiMemAccess.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWI\include\machwiOrphanHandler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWI\include\machwiPanIdConflictHandler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWI\include\machwiPanServer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWI\include\machwiPollHandler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWI\include\machwiPurgeHandler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWI\include\machwiResetHandler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWI\include\machwiRxEnableHandler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWI\include\machwiScanHandler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWI\include\machwiSetGetHandler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWI\include\machwiStartHandler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWI\include\machwiSwitchRxCtrl.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWI\include\machwiTransactionHandler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWI\include\machwiTransactionHash.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\MAC_PHY\MAC_HWI\include\machwiTransactionQueue.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\nldeData.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\nlmeDirectJoin.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\nlmeEdScan.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\nlmeJoin.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\nlmeLeave.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\nlmeNetworkDiscovery.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\nlmeNetworkFormation.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\nlmeNwkStatus.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\nlmePermitJoining.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\nlmeReset.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\nlmeRouteDiscovery.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\nlmeSetGet.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\nlmeStartRouter.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\nlmeSync.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\nlmeSyncLoss.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\nwk.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\nwkAddressResolv.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\nwkAttributes.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\nwkCommon.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\nwkConfigServer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\nwkGroup.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\nwkNeighbor.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\nwkProfiler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\nwkRouteInfo.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\nwkRouteTable.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\nwkSecurity.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkAddress.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkAddressConflict.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkAddressMap.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkBTT.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkCommands.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkConcentrator.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkConfig.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkDataReq.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkDbg.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkDirectJoin.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkDiscovery.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkEDScan.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkFormation.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkFrame.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkIB.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkInCounterSet.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkJoinInd.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkJoinReq.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkKeys.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkLeave.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkLinkStatus.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkLoopback.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkManager.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkManyToOne.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkMem.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkNeighborTable.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkOrphan.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkPacket.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkPassiveAck.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkPermitJoining.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkReportCommand.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkReset.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkRouteCache.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkRouteDiscovery.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkRouteDiscoveryTable.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkRouteRecord.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkRouteReply.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkRouteRequest.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkRouting.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkRoutingTable.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkRx.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkRxSecurity.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkSilentJoin.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkSourceRouting.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkStartRouter.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkStateMachine.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkStatusInd.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkStatusReq.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkSync.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkSyncLoss.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkSystem.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkTaskManager.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkTx.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkTxDelay.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkTxSecurity.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\NWK\include\private\nwkUpdateCommand.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\PersistDataServer\include\pdsDataServer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\PersistDataServer\include\pdsMemIds.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\PersistDataServer\src\fakePds.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\PersistDataServer\std\include\stdPdsCrcService.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\PersistDataServer\std\include\stdPdsDbg.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\PersistDataServer\std\include\stdPdsFiles.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\PersistDataServer\std\include\stdPdsMem.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\PersistDataServer\std\include\stdPdsMemAbstract.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\PersistDataServer\std\include\stdPdsMemAccess.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\PersistDataServer\std\include\stdPdsMemIds.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\PersistDataServer\std\include\stdPdsTimer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\PersistDataServer\std\include\stdPdsWriteData.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\PersistDataServer\std\src\stdPdsCrcService.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\PersistDataServer\std\src\stdPdsDataServer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\PersistDataServer\std\src\stdPdsEvents.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\PersistDataServer\std\src\stdPdsInit.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\PersistDataServer\std\src\stdPdsMem.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\PersistDataServer\std\src\stdPdsMemAccess.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\PersistDataServer\std\src\stdPdsTimer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\PersistDataServer\std\src\stdPdsWriteData.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\PersistDataServer\wl\include\wlPdsBindings.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\PersistDataServer\wl\include\wlPdsMemIds.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\PersistDataServer\wl\include\wlPdsSecurity.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\PersistDataServer\wl\include\wlPdsTaskManager.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\PersistDataServer\wl\include\wlPdsTypes.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\PersistDataServer\wl\include\wlPdsTypesConverter.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\PersistDataServer\wl\src\wlPdsDataServer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\PersistDataServer\wl\src\wlPdsInit.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\PersistDataServer\wl\src\wlPdsSecurity.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\PersistDataServer\wl\src\wlPdsTaskManager.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\PersistDataServer\wl\src\wlPdsTypesConverter.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\Security\ServiceProvider\include\private\sspAuthenticHandler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\Security\ServiceProvider\include\private\sspCcmHandler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\Security\ServiceProvider\include\private\sspChallengeGenHandler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\Security\ServiceProvider\include\private\sspHashHandler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\Security\ServiceProvider\include\private\sspManager.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\Security\ServiceProvider\include\private\sspMem.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\Security\ServiceProvider\include\private\sspSfpHandler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\Security\ServiceProvider\include\private\sspSkkeHandler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\Security\ServiceProvider\include\sspAuthentic.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\Security\ServiceProvider\include\sspChallengeGen.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\Security\ServiceProvider\include\sspCommon.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\Security\ServiceProvider\include\sspDbg.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\Security\ServiceProvider\include\sspHash.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\Security\ServiceProvider\include\sspReset.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\Security\ServiceProvider\include\sspSfp.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\Security\ServiceProvider\include\sspSkke.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\Security\SoftAes\sspAesHandler.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\Security\SoftAes\sspAesHandler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\Security\TrustCentre\include\private\tcAuthenticHandler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\Security\TrustCentre\include\private\tcDeviceTableCtrlHandler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\Security\TrustCentre\include\private\tcKeyEstablishHandler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\Security\TrustCentre\include\private\tcKeyUpdateHandler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\Security\TrustCentre\include\private\tcMem.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\Security\TrustCentre\include\private\tcRemoveHandler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\Security\TrustCentre\include\private\tcTaskManager.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\Security\TrustCentre\include\tc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\Security\TrustCentre\include\tcAuthentic.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\Security\TrustCentre\include\tcCommon.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\Security\TrustCentre\include\tcDbg.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\Security\TrustCentre\include\tcDeviceTableCtrl.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\Security\TrustCentre\include\tcKeyEstablish.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\Security\TrustCentre\include\tcKeyUpdate.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\Security\TrustCentre\include\tcPromiscuousMode.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\Security\TrustCentre\include\tcRemove.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\Security\TrustCentre\include\tcReset.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\SystemEnvironment\include\dbg.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\SystemEnvironment\include\sysAssert.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\SystemEnvironment\include\sysDbg.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\SystemEnvironment\include\sysDuplicateTable.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\SystemEnvironment\include\sysEndian.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\SystemEnvironment\include\sysEvents.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\SystemEnvironment\include\sysEventsHandler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\SystemEnvironment\include\sysIdleHandler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\SystemEnvironment\include\sysIncrementMacro.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\SystemEnvironment\include\sysInit.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\SystemEnvironment\include\sysMutex.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\SystemEnvironment\include\sysQueue.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\SystemEnvironment\include\sysRepeatMacro.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\SystemEnvironment\include\sysSleep.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\SystemEnvironment\include\sysStat.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\SystemEnvironment\include\sysTaskManager.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\SystemEnvironment\include\sysTimer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\SystemEnvironment\include\sysTypes.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\SystemEnvironment\include\sysUtils.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\SystemEnvironment\src\dbg.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\SystemEnvironment\src\sysAssert.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\SystemEnvironment\src\sysDuplicateTable.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\SystemEnvironment\src\sysEventsHandler.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\SystemEnvironment\src\sysIdleHandler.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\SystemEnvironment\src\sysInit.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\SystemEnvironment\src\sysMutex.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\SystemEnvironment\src\sysQueue.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\SystemEnvironment\src\sysSleep.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\SystemEnvironment\src\sysStat.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\SystemEnvironment\src\sysTaskManager.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\SystemEnvironment\src\sysTimer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\SystemEnvironment\src\sysUtils.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\include\zsiApsSerialization.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\include\zsiBspSerialization.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\include\zsiCommandId.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\include\zsiDbg.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\include\zsiDriver.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\include\zsiFrames.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\include\zsiHalSerialization.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\include\zsiInit.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\include\zsiKeSerialization.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\include\zsiMacSerialization.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\include\zsiMem.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\include\zsiMemoryManager.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\include\zsiNotify.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\include\zsiNwkSerialization.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\include\zsiSerialController.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\include\zsiSerialInterface.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\include\zsiSerializer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\include\zsiSysSerialization.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\include\zsiTaskManager.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\include\zsiTest.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\include\zsiZdoSerialization.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\include\zsiZdpSerialization.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\src\zsiAps.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\src\zsiApsSerialization.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\src\zsiBsp.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\src\zsiBspSerialization.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\src\zsiDriver.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\src\zsiHal.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\src\zsiHalSerialization.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\src\zsiInit.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\src\zsiKe.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\src\zsiKeSerialization.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\src\zsiMac.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\src\zsiMacSerialization.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\src\zsiMem.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\src\zsiMemoryManager.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\src\zsiNotify.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\src\zsiNwk.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\src\zsiNwkSerialization.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\src\zsiSerialController.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\src\zsiSerializer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\src\zsiSpiAdapter.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\src\zsiStubs.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\src\zsiSynchronization.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\src\zsiSys.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\src\zsiSysSerialization.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\src\zsiTaskManager.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\src\zsiUsartAdapter.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\src\zsiZdo.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\src\zsiZdoSerialization.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\src\zsiZdp.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZAppSI\src\zsiZdpSerialization.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\clusters.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\eccAux.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\genericEcc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\private\zclDbg.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\zcl.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\zclAlarmsCluster.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\zclAttributes.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\zclBACnetProtocolTunnelCluster.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\zclBasicCluster.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\zclCommandAnalyzer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\zclDemandResponseCluster.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\zclDiagnosticsCluster.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\zclFanControlCluster.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\zclGenericTunnelCluster.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\zclGroupsCluster.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\zclHumidityMeasurementCluster.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\zclIasACECluster.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\zclIasZoneCluster.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\zclIdentifyCluster.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\zclIlluminanceMeasurementCluster.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\zclInt.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\zclKeyEstablishmentCluster.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\zclLevelControlCluster.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\zclLinkInfoCluster.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\zclMem.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\zclMemoryManager.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\zclMessagingCluster.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\zclOccupancySensingCluster.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\zclOnOffCluster.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\zclOnOffSwitchConfigurationCluster.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\zclOtauClient.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\zclOTAUCluster.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\zclOtauManager.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\zclParser.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\zclPowerConfigurationCluster.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\zclPriceCluster.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\zclScenesCluster.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\zclSecurityManager.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\zclSimpleMeteringCluster.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\zclSimpleMeteringClusterMacroSet.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\zclSmartEnergyTunnelCluster.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\zclTaskManager.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\zclTemperatureMeasurementCluster.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\zclThermostatCluster.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\zclThermostatUiConfCluster.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\zclTimeCluster.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\zclZllBasicCluster.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\zclZllColorControlCluster.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\zclZllCommissioningCluster.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\zclZllGroupsCluster.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\zclZllIdentifyCluster.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\zclZllLevelControlCluster.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\zclZllOnOffCluster.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\include\zclZllScenesCluster.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\src\zcl.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\src\zclAttributes.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\src\zclCommandAnalyzer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\src\zclDummyEcc.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\src\zclKeyEstablishmentCluster.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\src\zclMemoryManager.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\src\zclOtauClient.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\src\zclOtauClientDiscovery.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\src\zclOtauClientDownload.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\src\zclOtauClientPdt.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\src\zclOtauClientQuery.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\src\zclOtauClientUpgrade.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\src\zclOtauManager.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\src\zclOtauServer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\src\zclParser.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\src\zclSecurityManager.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZCL\src\zclTaskManager.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZDO\include\appFramework.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZDO\include\private\zdoAddrResolvingInt.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZDO\include\private\zdoBinding.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZDO\include\private\zdoCommands.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZDO\include\private\zdoConfig.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZDO\include\private\zdoDbg.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZDO\include\private\zdoEndDeviceBinding.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZDO\include\private\zdoInit.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZDO\include\private\zdoLeaveNetwork.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZDO\include\private\zdoMem.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZDO\include\private\zdoMgmtNwkUpdate.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZDO\include\private\zdoNodeManager.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZDO\include\private\zdoNwkManager.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZDO\include\private\zdoPermissionsTable.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZDO\include\private\zdoPowerManager.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZDO\include\private\zdoServiceDiscovery.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZDO\include\private\zdoStartNetwork.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZDO\include\private\zdoStateMachine.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZDO\include\private\zdoTaskManager.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZDO\include\private\zdoZdpReq.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZDO\include\private\zdoZib.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZDO\include\zdo.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZDO\include\zdoAddrResolving.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZDO\include\zdoCommon.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZDO\include\zdoConfigServer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZDO\include\zdoNotify.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZDO\include\zdoPermissions.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZDO\include\zdoSecurityManager.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\devconfig.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Address\include\N_Address.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Address\src\N_Address.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Beacon\include\N_Beacon.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_ErrH\include\N_ErrH.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_ErrH\src\N_ErrH.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Fsm\include\N_Fsm-Logging.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Fsm\include\N_Fsm.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Fsm\src\N_Fsm-Logging.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Fsm\src\N_Fsm-NonLogging.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Fsm\src\N_Fsm.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Init\include\N_Init-Atmel_Bindings.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Init\include\N_Init.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Init\src\N_Init-Atmel.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Init\src\N_Init-Testharness.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Log\include\N_Log.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Log\src\N_Log.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Memory\include\N_Memory.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Memory\src\N_Memory-Atmel.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Memory\src\N_Memory-Testharness.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Task\include\N_Task-Internal.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Task\include\N_Task.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Task\include\N_Task_Bindings.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Task\include\N_Task_Init.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Task\src\N_Task-Internal-Atmel.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Task\src\N_Task-Internal-Testharness.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Task\src\N_Task.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Timer\include\N_Timer-Internal.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Timer\include\N_Timer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Timer\include\N_Timer_Bindings.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Timer\include\N_Timer_Init.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Timer\src\N_Timer-Internal-Atmel.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Timer\src\N_Timer-Internal-Testharness.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Timer\src\N_Timer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Types\include\N_Types.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Util\include\N_Util.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Util\include\N_Util_Bindings.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\N_Util\src\N_Util.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\D_Nv\include\D_Nv.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\D_Nv\include\D_Nv_Bindings.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\D_Nv\include\D_Nv_Init.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\D_Nv\src\D_Nv.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\D_XNv\include\D_XNv.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\D_XNv\include\D_XNv_Bindings.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\D_XNv\include\D_XNv_Init.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\D_XNv\src\D_XNv-ATmega.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\D_XNv\src\D_XNv-SamR21.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_AddressManager\include\N_AddressManager.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_AddressManager\include\N_AddressManager_Bindings.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_AddressManager\include\N_AddressManager_Init.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_AddressManager\src\N_AddressManager.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_AddressMap\include\N_AddressMap.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_AddressMap\include\N_AddressMap_Bindings.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_AddressMap\src\N_AddressMap.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_BcConfig\include\configuration.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Beacon\include\N_Beacon.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Binding\include\N_Binding.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Binding\include\N_Binding_Bindings.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Binding\include\N_Binding_Init.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Binding\src\N_Binding.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Cmi\include\N_Cmi.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Cmi\include\N_Cmi_Bindings.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Cmi\include\N_Cmi_Init.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Cmi\src\N_Cmi.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Connection\include\N_Connection.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Connection\include\N_ConnectionEnddevice_Bindings.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Connection\include\N_ConnectionEnddevice_Init.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Connection\include\N_ConnectionRouter_Bindings.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Connection\include\N_ConnectionRouter_Init.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Connection\include\N_Connection_Internal.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Connection\include\N_Connection_Private.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Connection\include\N_Connection_ReconnectHandler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Connection\src\N_ConnectionAssociation.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Connection\src\N_ConnectionCommon.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Connection\src\N_ConnectionEnddevice.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Connection\src\N_ConnectionRouter.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Connection\src\N_Connection_ReconnectHandler.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_DeviceInfo\include\N_DeviceInfo.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_DeviceInfo\include\N_DeviceInfo_Bindings.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_DeviceInfo\include\N_DeviceInfo_Init.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_DeviceInfo\include\N_DeviceInfo_Version.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_DeviceInfo\src\N_DeviceInfo.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_EndDeviceRobustness\include\N_EndDeviceRobustness.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_EndDeviceRobustness\include\N_EndDeviceRobustness_Bindings.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_EndDeviceRobustness\include\N_EndDeviceRobustness_Init.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_EndDeviceRobustness\src\N_EndDeviceRobustness.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Groups\include\N_Groups.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Groups\include\N_Groups_Bindings.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Groups\src\N_Groups.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_InterPan\include\N_InterPan.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_InterPan\include\N_InterPanBuffers.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_InterPan\include\N_InterPan_Bindings.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_InterPan\include\N_InterPan_Init.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_InterPan\src\N_InterPan.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_InterPan\src\N_InterPanBuffers.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_LinkInitiator\include\N_LinkInitiator.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_LinkInitiator\include\N_LinkInitiator_Bindings.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_LinkInitiator\include\N_LinkInitiator_Init.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_LinkInitiator\src\N_LinkInitiator.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_LinkTarget\include\N_LinkTarget.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_LinkTarget\include\N_LinkTarget_Bindings.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_LinkTarget\include\N_LinkTarget_Init.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_LinkTarget\src\N_LinkTarget.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_LowPower\include\N_LowPower.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_LowPower\include\N_LowPower_Init.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_LowPower\src\N_LowPower.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_PacketDistributor\include\N_PacketDistributor.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_PacketDistributor\include\N_ZllEndpoint.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_PacketDistributor\src\N_PacketDistributor.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Radio\include\N_Radio.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Radio\include\N_Radio_Bindings.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Radio\include\N_Radio_Init.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Radio\include\N_Radio_Internal.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Radio\src\N_Radio.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_ReconnectHandler\include\N_ReconnectHandler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_ReconnectHandler\include\N_ReconnectHandler_Bindings.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_ReconnectHandler\include\N_ReconnectHandler_Init.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_ReconnectHandler\src\N_ReconnectHandler.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Security\include\N_Security.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Security\include\N_Security_Bindings.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Security\include\N_Security_Calc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Security\include\N_Security_Init.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Security\src\N_Security.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Security\src\N_Security_Calc.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_SourceRouting\include\N_SourceRouting.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_SourceRouting\include\N_SourceRouting_Bindings.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_SourceRouting\src\N_SourceRouting.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Watchdog\include\N_Watchdog.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Watchdog\include\N_Watchdog_Bindings.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Watchdog\include\N_Watchdog_Init.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Watchdog\include\N_Watchdog_Internal.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Watchdog\src\N_Watchdog.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Zcl_Framework\include\N_Zcl_DataInd.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Zcl_Framework\include\N_Zcl_DataRequest.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Zcl_Framework\include\N_Zcl_Framework.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Zcl_Framework\include\N_Zcl_Framework_Bindings.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Zcl_Framework\src\N_Zcl_Framework.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Zdp\include\N_Zdp.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Zdp\include\N_Zdp_Bindings.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Zdp\include\N_Zdp_Init.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\N_Zdp\src\N_Zdp.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\S_Nv\include\S_Nv.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\S_Nv\include\S_NvInternal.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\S_Nv\include\S_Nv_Bindings.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\S_Nv\include\S_Nv_Init.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\S_Nv\include\S_Nv_Stack_Ids.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\S_Nv\src\S_Nv-ATmega.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\S_Nv\src\S_Nv-External.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\S_Nv\src\S_Nv-SamR21.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\S_Nv\src\S_Nv_Stub.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\S_XNv\include\S_XNv.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\S_XNv\include\S_XNv_Bindings.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\S_XNv\include\S_XNv_Init.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\ZLL\S_XNv\src\S_XNv.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\lib\MakerulesBc_All_Atsamr21g18a_Rf233_Gcc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\lib\MakerulesBc_All_Sec_Atsamr21g18a_Rf233_Gcc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\lib\MakerulesBc_All_StdlinkSec_Atsamr21g18a_Rf233_Gcc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\lib\MakerulesBc_Coordinator_StdlinkSec_Atsamr21g18a_Rf233_Gcc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\lib\MakerulesBc_EndDevice_StdlinkSec_Atsamr21g18a_Rf233_Gcc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RFStamp-BitCloud\BitCloud\lib\MakerulesBc_Router_StdlinkSec_Atsamr21g18a_Rf233_Gcc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\appBindings.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\configuration.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\light.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\lightBasicCluster.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\lightBasicCluster.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\lightClusters.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\lightClusters.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\lightColorControlCluster.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\lightColorControlCluster.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\lightColorSchemesConversion.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\lightColorSchemesConversion.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\lightCommissioningCluster.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\lightCommissioningCluster.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\LightConsole.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\lightGroupsCluster.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\lightGroupsCluster.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\lightIdentifyCluster.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\lightIdentifyCluster.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\lightLevelControlCluster.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\lightLevelControlCluster.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\lightOnOffCluster.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\lightOnOffCluster.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\lightOtaCluster.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\lightOtaCluster.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\lightPdt.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\lightScenesCluster.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\lightScenesCluster.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\LightTesting.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\lightTesting.h">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="atsamr21g18a.ld">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="Makefile">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="RFStamp-BitCloud\.git">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="RFStamp-BitCloud\BitCloud\Components\BSP\BoardConfig">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="RFStamp-BitCloud\BitCloud\Components\BSP\Makefile">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="RFStamp-BitCloud\BitCloud\Components\ConfigServer\Makefile">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="RFStamp-BitCloud\BitCloud\Components\HAL\Configuration">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="RFStamp-BitCloud\BitCloud\Components\HAL\cortexm0+\Makefile">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\OFD\Makefile">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\OFD\src\ofdIntFlashRead.s90">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="RFStamp-BitCloud\BitCloud\Components\HAL\drivers\USBClasses\VCP\Makefile">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="RFStamp-BitCloud\BitCloud\Components\HAL\HAL.cproj">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="RFStamp-BitCloud\BitCloud\Components\HAL\Makefile">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="RFStamp-BitCloud\BitCloud\Components\HAL\Makerules">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="RFStamp-BitCloud\BitCloud\Components\PersistDataServer\Makefile">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="RFStamp-BitCloud\BitCloud\Components\ZLLPlatform\Infrastructure\Atmel.cfg">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="RFStamp-BitCloud\BitCloud\lib\libBc_All_Atsamr21g18a_Rf233_Gcc.a">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="RFStamp-BitCloud\BitCloud\lib\libBc_All_Sec_Atsamr21g18a_Rf233_Gcc.a">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="RFStamp-BitCloud\BitCloud\lib\libBc_All_StdlinkSec_Atsamr21g18a_Rf233_Gcc.a">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="RFStamp-BitCloud\BitCloud\lib\libBc_Coordinator_StdlinkSec_Atsamr21g18a_Rf233_Gcc.a">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="RFStamp-BitCloud\BitCloud\lib\libBc_EndDevice_StdlinkSec_Atsamr21g18a_Rf233_Gcc.a">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="RFStamp-BitCloud\BitCloud\lib\libBc_Router_StdlinkSec_Atsamr21g18a_Rf233_Gcc.a">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="RFStamp-BitCloud\BitCloud\lib\libsamr21_qtouch_gcc.a">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="RFStamp-BitCloud\BitCloud\lib\MakerulesBc_All_Atsamr21g18a_Rf233_Gcc">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="RFStamp-BitCloud\BitCloud\lib\MakerulesBc_All_Sec_Atsamr21g18a_Rf233_Gcc">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="RFStamp-BitCloud\BitCloud\lib\MakerulesBc_All_StdlinkSec_Atsamr21g18a_Rf233_Gcc">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="RFStamp-BitCloud\BitCloud\lib\MakerulesBc_Coordinator_StdlinkSec_Atsamr21g18a_Rf233_Gcc">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="RFStamp-BitCloud\BitCloud\lib\MakerulesBc_EndDevice_StdlinkSec_Atsamr21g18a_Rf233_Gcc">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="RFStamp-BitCloud\BitCloud\lib\MakerulesBc_Router_StdlinkSec_Atsamr21g18a_Rf233_Gcc">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="RFStamp-BitCloud\BitCloud\lib\Makerules_Atsamr21g18a_Gcc">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="RFStamp-BitCloud\LICENSE.txt">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="RFStamp-BitCloud\README.md">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="RFStamp-BitCloud\Release%2520Notes.txt">
+      <SubType>compile</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
+</Project>
