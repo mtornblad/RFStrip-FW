@@ -239,6 +239,8 @@ ifneq (, $(findstring .$(ASM_FILE_EXT), $(SRCS)))
   OBJS += $(addprefix $(OBJ_PATH)/, $(notdir %$(subst .$(ASM_FILE_EXT),.o,$(ASRCS))))
 endif
 
+$(foreach src,$(SRCS),$(eval $(OBJ_PATH)/$(notdir $(src:.c=.o)): $(src)))
+
 CFLAGS += $(DEFINES)
 CFLAGS += $(INCLUDES)
 CFLAGS += --include $(PREINCLUDE)
@@ -257,9 +259,9 @@ LINKER_FLAGS += $(filter -mcpu%,$(CFLAGS))
 
 images: $(EXE_PATH)/$(APP_NAME).elf $(EXE_PATH)/$(APP_NAME).hex $(EXE_PATH)/$(APP_NAME).srec $(EXE_PATH)/$(APP_NAME).bin
 
-all: directories images root_files size
+all: directories images size
 
-$(OBJS): $(SRCS)
+$(OBJ_PATH)/%.o:
 	$(CC) $(CFLAGS) $(filter %/$(subst .o,.c,$(notdir $@)), $(SRCS)) -o $@
 
 $(EXE_PATH)/$(APP_NAME).elf: $(OBJS)
@@ -273,9 +275,6 @@ $(EXE_PATH)/$(APP_NAME).hex: $(EXE_PATH)/$(APP_NAME).elf
 
 $(EXE_PATH)/$(APP_NAME).bin: $(EXE_PATH)/$(APP_NAME).elf
 	$(OBJCOPY) -O binary --strip-debug --strip-unneeded -R .eeprom $^ $@
-
-root_files: images
-	cp -f $(EXE_PATH)/*.* ./../../
 
 clean:
 	rm -rf $(CONFIG_NAME) ../../$(APP_NAME).elf ../../$(APP_NAME).hex ../../$(APP_NAME).srec ../../$(APP_NAME).bin

@@ -17,6 +17,10 @@
 #define BOARD_SAMR21_ZLLEK 0x06
 #define BOARD_SAMR21B18_MZ210PA_MODULE 0x07
 #define BOARD_SAMR21G18_MR210UA_MODULE 0x08
+#define BOARD_RFRINGQT 0xC0
+#define BOARD_RFRINGQM 0xC1
+#define BOARD_RFSTRIP 0xC2
+#define BOARD_RFBRIDGE 0xC3
 
 //-----------------------------------------------
 // Atmel communication interfaces identifiers.
@@ -111,16 +115,20 @@
 
 #define ZCL_SUPPORT 1
 
-#define QTOUCH_SUPPORT 0
+#define QTOUCH_SUPPORT 1
 
 // Shall be enabled for Atmel generic ZLL Applications.
 #define ATMEL_APPLICATION_SUPPORT 1
 
-#define BSP_SUPPORT BOARD_SAMR21_XPRO
+//#define BSP_SUPPORT BOARD_SAMR21_XPRO
 //#define BSP_SUPPORT BOARD_SAMR21_ZLLEK
 //#define BSP_SUPPORT BOARD_FAKE
 //#define BSP_SUPPORT BOARD_SAMR21B18_MZ210PA_MODULE
 //#define BSP_SUPPORT BOARD_SAMR21G18_MR210UA_MODULE
+//#define BSP_SUPPORT BOARD_RFRINGQT
+//#define BSP_SUPPORT BOARD_RFRINGQM
+#define BSP_SUPPORT BOARD_RFSTRIP
+//#define BSP_SUPPORT BOARD_RFBRIDGE
 
 // Defines primary serial interface type to be used by application.
 #define APP_INTERFACE APP_INTERFACE_USART
@@ -420,9 +428,9 @@
   //#define APP_SUPPORT_OTAU_PAGE_REQUEST 0
   
   // Defines type of used external flash memory chip.
-  #define EXTERNAL_MEMORY AT25DF041A
+  //#define EXTERNAL_MEMORY AT25DF041A
   //#define EXTERNAL_MEMORY M25P40VMN6PB
-  //#define EXTERNAL_MEMORY AT45DB041E
+  #define EXTERNAL_MEMORY AT45DB041E
   //#define EXTERNAL_MEMORY MX25L2006E
   //#define EXTERNAL_MEMORY MX25V4006E
   //#define EXTERNAL_MEMORY AT45DB041
